@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+gem 'capybara'
+gem 'cucumber'
+gem 'rspec'
+gem 'selenium-webdriver'
+gem 'site_prism'
+gem 'simple_xlsx_reader'
+gem 'write_xlsx'
+gem 'roo'
