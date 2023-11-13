@@ -10,5 +10,4 @@ Contexto:
         Dado selecionar a opcao guest
         E clicar em register
         Quando preencho as informacoes de cadastro
-        E registro
         Entao valido que fui regirecionado para a tela de login

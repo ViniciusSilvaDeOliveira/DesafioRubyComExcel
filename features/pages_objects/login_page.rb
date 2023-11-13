@@ -4,4 +4,8 @@ class Page_ObjectLogin < SitePrism::Page
     element :inputUsernameLogin, :xpath, '//*[@id="login-form"]/fieldset/div[1]/input'
     element :inputPasswordLogin, :xpath, '//*[@id="login-form"]/fieldset/div[2]/input'
     element :btnSignIn,          :xpath, '//*[@id="login-form"]/fieldset/div[3]/button'
+
+    def textoPresenteTela(informacao)
+        page.has_content?(informacao)
+    end
 end
