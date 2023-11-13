@@ -1,18 +1,18 @@
 Dado('estar na pagina inicial') do
     visit('/')
-    login.load
+    cadastro.load
     #dadosCadastro.load
 end
 
 Dado ('selecionar a opcao guest') do
     sleep(2)
-    login.btnGuest.click
+    cadastro.btnGuest.click
     sleep(2)
 end
 
 E('clicar em register') do
     sleep(2)
-    login.btnRegister.click
+    cadastro.btnRegister.click
     sleep(2)
 end
 
@@ -23,11 +23,20 @@ Quando('preencho as informacoes de cadastro') do
   1.upto(leitura_excel.total_linhas) do |row|
     dados_linha = leitura_excel.ler_linha(row)
 
-    login.inputFirstName.send_keys(dados_linha[:nome])
-    login.inputLastName.send_keys(dados_linha[:sobrenome])
-    login.inputUsername.send_keys(dados_linha[:username])
-    login.inputPassword.send_keys(dados_linha[:password])
+    cadastro.inputFirstName.send_keys(dados_linha[:nome])
+    cadastro.inputLastName.send_keys(dados_linha[:sobrenome])
+    cadastro.inputUsername.send_keys(dados_linha[:username])
+    cadastro.inputPassword.send_keys(dados_linha[:password])
 
     sleep(2)
   end
+end
+
+E('registro') do
+  cadastro.btnCadastro.click
+end
+
+Entao('valido que fui regirecionado para a tela de login') do 
+  sleep(5)
+  expect(login.textoTelaLogin.text).to eql('Please sign in')
 end
