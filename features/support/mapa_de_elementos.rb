@@ -12,4 +12,8 @@ module PageObjects
     def login
         @login ||= Page_ObjectLogin.new
     end
+
+    def telaInicial
+        @telaInicial ||= Tela_Inicial.new
+    end
 end
